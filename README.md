@@ -1,4 +1,4 @@
-# 🌟 Progetto StarTrack
+ # 🌟 Progetto StarTrack
 
 Benvenuto in **StarTrack**, un'applicazione web moderna per tracciare i tuoi obiettivi e progressi personali in modo semplice e intuitivo.
 
@@ -32,4 +32,4 @@ npm install
 npm run dev
 
 
-https://prod.liveshare.vsengsaas.visualstudio.com/join?717CC843F299CD42598C6D9FCDE7298A5B8B
+https://prod.liveshare.vsengsaas.visualstudio.com/join?717CC843F299CD42598C6D9FCDE7298A5B8B 
