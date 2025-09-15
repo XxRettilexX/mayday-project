@@ -10,7 +10,7 @@ Benvenuto in **StarTrack**, un'applicazione web moderna per tracciare i tuoi obi
 - **Progressi Visivi:** Visualizza i tuoi progressi con grafici interattivi.
 - **Notifiche Smart:** Ricevi promemoria per rimanere motivato.
 - **Supporto Multi-Dispositivo:** Utilizzabile da desktop, tablet e smartphone.
-- **Tema Chiaro/Scuro:** Scegli il look che preferisci.
+- **Tema Chiaro/Scuro:** Scegli il look che prefer.
 
 ---
 
