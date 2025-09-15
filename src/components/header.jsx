@@ -5,5 +5,5 @@ export default function Header() {
             <p>Piattaforma per 104 & h4nd1cap</p>
 
         </header>
-    )
+    );
 }
