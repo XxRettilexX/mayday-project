@@ -1,12 +1,15 @@
-import Header from "./components/header";
+import Header from "./components/Header";
+import Profilo from "./components/Profilo";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <>
+    <div className="flex flex-col min-h-screen bg-gray-100 text-gray-800">
       <Header />
-      <main>
-        <p>Salve a tutti ragazzi. Oggi bocchini a 5 euro</p>
+      <main className="flex-grow flex items-center justify-center">
+        <Profilo />
       </main>
-    </>
+      <Footer />
+    </div>
   );
 }
