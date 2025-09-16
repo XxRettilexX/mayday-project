@@ -1,35 +1,30 @@
- # 🌟 Progetto StarTrack
+# 🌌 MyShop – Neon Product Catalog
 
-Benvenuto in **StarTrack**, un'applicazione web moderna per tracciare i tuoi obiettivi e progressi personali in modo semplice e intuitivo.
+![Header Image](https://via.placeholder.com/1200x300/111/00f?text=MyShop+Neon)
+
+**MyShop** è un piccolo progetto React + TypeScript + Vite che mostra un catalogo di prodotti con uno stile moderno, elegante e “neon blue”. Perfetto come base per un portfolio o un e-commerce vetrina.
 
 ---
 
-## 🚀 Caratteristiche principali
+## ✨ Caratteristiche principali
 
-- **Gestione Obiettivi:** Crea, modifica e elimina obiettivi personalizzati.
-- **Progressi Visivi:** Visualizza i tuoi progressi con grafici interattivi.
-- **Notifiche Smart:** Ricevi promemoria per rimanere motivato.
-- **Supporto Multi-Dispositivo:** Utilizzabile da desktop, tablet e smartphone.
-- **Tema Chiaro/Scuro:** Scegli il look che prefer.
+- **React + TypeScript + Vite**: struttura moderna e modulare
+- **Header e Footer** stilizzati con effetto neon blu
+- **Lista Prodotti** con card rettangolari
+- **Hover effect neon** sulle card per un effetto “futuristico”
+- **Responsive design**: adattabile a mobile, tablet e desktop
+- **CSS centralizzato** in `App.css` per facilità di manutenzione
 
 ---
 
 ## 🛠️ Tecnologie utilizzate
 
-- **React** & **TypeScript** per un'interfaccia reattiva e sicura.
-- **Vite** per sviluppo ultra-veloce.
-- **Styled Components** per uno stile moderno e modulare.
-- **Chart.js** per grafici dinamici.
+- [React](https://reactjs.org/) – Libreria UI
+- [TypeScript](https://www.typescriptlang.org/) – Tipizzazione sicura
+- [Vite](https://vitejs.dev/) – Build tool super veloce
+- CSS classico con effetti neon
 
 ---
 
-## 📦 Installazione
+## 📂 Struttura del progetto
 
-```bash
-git clone https://github.com/tuo-utente/startrack.git
-cd startrack
-npm install
-npm run dev
-
-
-https://prod.liveshare.vsengsaas.visualstudio.com/join?717CC843F299CD42598C6D9FCDE7298A5B8B 
