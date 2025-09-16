@@ -4,9 +4,9 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100 text-gray-800">
+    <div className="d-flex flex-column min-vh-100 bg-light text-dark">
       <Header />
-      <main className="flex-grow flex items-center justify-center">
+      <main className="flex-grow-1 d-flex justify-content-center align-items-center">
         <Profilo />
       </main>
       <Footer />
