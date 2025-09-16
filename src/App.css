@@ -1,42 +1,100 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Layout generale */
+.app-container {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  background: #fff;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* HEADER */
+.app-header {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+  margin-bottom: 30px;
+}
+
+.app-title {
+  font-size: 2.5rem;
+  color: #00f;
+  text-shadow: 0 0 6px #00f, 0 0 12px #00f88;
+  margin: 0;
+}
+
+/* FOOTER */
+.app-footer {
+  width: 100%;
+  padding: 12px 0;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 -2px 6px rgba(0, 0, 255, 0.3);
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #222;
+}
+
+/* Sezione Prodotti */
+.product-section {
+  width: 100%;
+  max-width: 1000px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #00f;
+  text-shadow: 0 0 6px #00f, 0 0 12px #00f88;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Lista card */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+/* Card prodotto */
+.product-card {
+  background: whitesmoke;
+  color: #222;
+  width: 100%;
+  max-width: 250px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 255, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 12px #00f, 0 0 24px #00f66, 0 0 40px #00f88;
+}
+
+.product-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-shadow: 0 0 4px #00f, 0 0 8px #00f66;
+}
+
+.product-price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #00f;
+  text-shadow: 0 0 4px #00f, 0 0 8px #00f66;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .product-list {
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

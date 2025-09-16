@@ -1,14 +1,21 @@
 import Header from "./components/header";
-import Profilo from "./components/Profilo";
 import Footer from "./components/Footer";
+import List from "./components/List";
+import "./App.css";
 
 export default function App() {
   return (
-    <div className="d-flex flex-column min-vh-100 bg-light text-dark">
+    <div className="app-container">
+      {/* HEADER */}
       <Header />
-      <main className="flex-grow-1 d-flex justify-content-center align-items-center">
-        <Profilo />
-      </main>
+
+      {/* SEZIONE PRODOTTI */}
+      <section className="product-section">
+        <h2 className="section-title">Lista Prodotti</h2>
+        <List />
+      </section>
+
+      {/* FOOTER */}
       <Footer />
     </div>
   );

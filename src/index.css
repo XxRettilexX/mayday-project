@@ -1,40 +1,27 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Reset base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* Font moderno e gradevole */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
-html,
+/* Body globale */
 body {
-  @apply h-full bg-gray-100 text-gray-800 font-[Inter];
+  font-family: Arial, sans-serif;
+  background: #111;
+  /* sfondo scuro coerente con neon */
+  color: #fff;
+  line-height: 1.5;
 }
 
-/* Stile globale per titoli */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-semibold tracking-tight;
-}
-
-/* Link eleganti */
+/* Link base */
 a {
-  @apply text-indigo-600 hover:text-indigo-800 transition-colors duration-200;
+  text-decoration: none;
+  color: inherit;
 }
 
-/* Bottoni riutilizzabili */
-.btn-primary {
-  @apply bg-indigo-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-indigo-700 transition-all duration-200;
-}
-
-.btn-outline {
-  @apply border border-indigo-600 text-indigo-600 px-4 py-2 rounded-lg hover:bg-indigo-600 hover:text-white transition-all duration-200;
-}
-
-/* Card di base (puoi usarla anche oltre al profilo) */
-.card {
-  @apply bg-white rounded-2xl shadow-lg p-6;
+/* Immagini responsive */
+img {
+  max-width: 100%;
+  display: block;
 }
