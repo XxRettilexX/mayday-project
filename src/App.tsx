@@ -1,4 +1,4 @@
-import Header from "./components/Header";
+import Header from "./components/header";
 import Profilo from "./components/Profilo";
 import Footer from "./components/Footer";
 
