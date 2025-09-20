@@ -1,22 +1,27 @@
-import Header from "./components/header";
-import Footer from "./components/Footer";
-import List from "./components/List";
-import "./App.css";
+import { Routes, Route } from "react-router-dom"
+import Header from "./components/Header/Header"
+import Footer from "./components/Footer/Footer"
+import Navbar from "./components/Navigation/Navbar"
+import Home from "./pages/Home"
+import Dictionary from "./pages/Dictionary"
+import EmailCheck from "./pages/EmailCheck"
+import Administrative from "./pages/Administrative"
+import "./App.css"
 
 export default function App() {
   return (
-    <div className="app-container">
-      {/* HEADER */}
+    <div className="app">
       <Header />
-
-      {/* SEZIONE PRODOTTI */}
-      <section className="product-section">
-        <h2 className="section-title">Lista Prodotti</h2>
-        <List />
-      </section>
-
-      {/* FOOTER */}
+      <Navbar />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/dizionario" element={<Dictionary />} />
+          <Route path="/controllo-email" element={<EmailCheck />} />
+          <Route path="/pratiche" element={<Administrative />} />
+        </Routes>
+      </main>
       <Footer />
     </div>
-  );
+  )
 }
