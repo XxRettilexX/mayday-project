@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useDictionaryVm } from "../viewmodels/useDictionaryVm"
 import TermCard from "../components/Dictionary/TermCards"
-import Navbar from "../components/Navigation/Navbar"
+
 export default function Dictionary() {
     const { terms, isLoading, searchQuery, setSearchQuery, loadTerms, error } = useDictionaryVm()
 
