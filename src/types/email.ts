@@ -1,12 +1,14 @@
-export interface EmailCheckResult {
-    status: 'safe' | 'suspicious' | 'scam';
-    message: string;
-    details?: string;
+export type Sicurezza = 'alta' | 'media' | 'bassa';
+
+export interface EmailAnalysis {
+    sicurezza: Sicurezza;
+    fattoriRischio: string[];
+    suggerimenti: string[];
+    livelloPericolo: 1 | 2 | 3 | 4 | 5;
 }
 
-export interface EmailState {
-    email: string;
-    result?: EmailCheckResult;
-    isLoading: boolean;
-    error?: string;
+export interface RawEmailInput {
+    mittente: string; // es. "nome <noreply@banca-imitazione.com>"
+    testo: string;
+    oggetto?: string;
 }
