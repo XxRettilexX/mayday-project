@@ -1,0 +1,148 @@
+/* ===== FOOTER.CSS - Stile modulare per Footer.tsx ===== */
+
+/* Container principale */
+.site-footer {
+    background-color: var(--background-white);
+    color: var(--text-dark);
+    padding: var(--spacing-xxl) var(--spacing-lg);
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    border-top: 4px solid var(--primary-blue);
+}
+
+/* Container interno */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--spacing-xl);
+}
+
+/* Sezioni interne */
+.footer-section h4 {
+    font-size: var(--font-size-md);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--accent-orange);
+}
+
+.footer-section p,
+.footer-section li {
+    font-size: var(--font-size-normal);
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-section a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: color var(--transition-normal);
+}
+
+.footer-section a:hover {
+    color: var(--accent-orange);
+}
+
+/* Lista link utili */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section li {
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Icone social */
+.social-icons {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.social-icons a {
+    font-size: var(--icon-size-lg);
+    color: var(--text-dark);
+    transition: transform var(--transition-normal), color var(--transition-normal);
+}
+
+.social-icons a:hover {
+    color: var(--accent-orange);
+    transform: scale(1.1);
+}
+
+/* Bottom bar */
+.footer-bottom {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: var(--font-size-sm);
+}
+
+/* Pulsante scroll to top */
+.scroll-top {
+    background: var(--accent-orange);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    font-size: var(--icon-size-md);
+}
+
+.scroll-top:hover {
+    background: var(--accent-light);
+    transform: scale(1.1);
+}
+
+/* ===== DARK MODE ===== */
+[data-theme="dark"] .site-footer {
+    background-color: var(--background-white);
+    color: var(--text-light);
+    border-top-color: var(--primary-light);
+}
+
+[data-theme="dark"] .footer-section a,
+[data-theme="dark"] .footer-section p,
+[data-theme="dark"] .footer-section li {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .social-icons a {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .social-icons a:hover,
+[data-theme="dark"] .footer-section a:hover {
+    color: var(--accent-light);
+}
+
+[data-theme="dark"] .footer-bottom {
+    border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-footer {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+}

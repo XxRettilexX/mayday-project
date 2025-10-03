@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { useDictionaryVm } from "../viewmodels/useDictionaryVm"
 import TermCard from "../components/Dictionary/TermCards"
+import "./Dictionary.css"
 
 export default function Dictionary() {
     const { terms, isLoading, searchQuery, setSearchQuery, loadTerms, error } = useDictionaryVm()
@@ -10,7 +11,7 @@ export default function Dictionary() {
     }, [loadTerms])
 
     return (
-        <div>
+        <div className="dictionary-page">
 
             <h2>Dizionario degli Slang Web</h2>
 

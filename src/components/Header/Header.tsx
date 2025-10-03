@@ -11,6 +11,7 @@ interface HeaderProps {
     subtitle?: string;
     showIcons?: boolean;
 }
+import "./Header.css"
 
 const Header = ({
     title = "MayDay - Aiuto per Anziani",

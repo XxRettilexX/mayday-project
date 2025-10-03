@@ -1,0 +1,115 @@
+/* emailcheck.css - Stili specifici per EmailCheck.tsx */
+
+/* Container principale */
+.emailcheck-page {
+    padding: var(--spacing-xl);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Titolo */
+.emailcheck-page h1 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-dark);
+    text-align: center;
+}
+
+/* Form */
+.emailcheck-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.emailcheck-form textarea {
+    width: 100%;
+    padding: var(--spacing-md);
+    font-size: var(--font-size-md);
+    border: 2px solid var(--primary-light);
+    border-radius: var(--border-radius-md);
+    resize: vertical;
+    transition: all var(--transition-normal);
+    background-color: var(--background-white);
+    color: var(--text-dark);
+    font-family: inherit;
+}
+
+.emailcheck-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+/* Pulsante */
+.emailcheck-form button {
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+    color: white;
+    border: none;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: var(--font-size-md);
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: var(--shadow-light);
+    transition: all var(--transition-normal);
+    min-height: var(--min-touch-size);
+}
+
+.emailcheck-form button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-blue));
+    box-shadow: var(--shadow-medium);
+}
+
+.emailcheck-form button:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Risultati dell'analisi */
+.email-result {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    transition: all var(--transition-normal);
+}
+
+.email-result.safe {
+    background-color: #f0fdf4;
+    color: #166534;
+    border-left: 6px solid var(--success-green);
+}
+
+.email-result.suspicious {
+    background-color: #fefce8;
+    color: #854d0e;
+    border-left: 6px solid var(--warning-yellow);
+}
+
+.email-result.danger {
+    background-color: #fef2f2;
+    color: #991b1b;
+    border-left: 6px solid var(--error-red);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .emailcheck-page {
+        padding: var(--spacing-lg);
+    }
+
+    .emailcheck-form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .emailcheck-page {
+        padding: var(--spacing-md);
+    }
+}

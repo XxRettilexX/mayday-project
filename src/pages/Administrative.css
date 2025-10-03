@@ -1,0 +1,149 @@
+/* administrative.css - Stile modulare simile a dictionary.css */
+
+/* Container principale */
+.admin-page {
+    padding: var(--spacing-xl);
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--background-light);
+    color: var(--text-dark);
+    font-family: Arial, sans-serif;
+}
+
+/* Titolo e descrizione */
+.admin-page h1 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-dark);
+    text-align: center;
+}
+
+.admin-page p {
+    font-size: var(--font-size-md);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-medium);
+    text-align: center;
+}
+
+/* Griglia delle guide */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+/* Card guida (simile term-card) */
+.guide-card {
+    background: var(--background-white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-light);
+    border-left: 6px solid var(--primary-blue);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.guide-card:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: var(--shadow-medium);
+    border-left-color: var(--accent-orange);
+}
+
+/* Titolo e descrizione card */
+.guide-card h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-xs);
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+.guide-card p {
+    font-size: var(--font-size-normal);
+    color: var(--text-medium);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Modal overlay */
+.guide-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1200;
+    padding: var(--spacing-md);
+}
+
+/* Modal box */
+.guide-modal {
+    background: var(--background-white);
+    color: var(--text-dark);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-heavy);
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+}
+
+/* Titolo e contenuto modal */
+.guide-modal h2 {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+}
+
+.guide-modal p {
+    font-size: var(--font-size-md);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Pulsante chiudi modal */
+.guide-modal .close-btn {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-xs) var(--spacing-md);
+    cursor: pointer;
+    font-weight: 700;
+    transition: all var(--transition-normal);
+}
+
+.guide-modal .close-btn:hover {
+    background: var(--accent-orange);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .grid-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-page {
+        padding: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-page {
+        padding: var(--spacing-md);
+    }
+
+    .guide-modal {
+        padding: var(--spacing-md);
+    }
+}

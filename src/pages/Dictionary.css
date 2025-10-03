@@ -1,0 +1,109 @@
+/* dictionary.css - Stili specifici per Dictionary.tsx */
+
+/* Container principale */
+.dictionary-page {
+    padding: var(--spacing-xl);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Titolo */
+.dictionary-page h2 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+    color: var(--primary-dark);
+    text-align: center;
+}
+
+/* Barra di ricerca */
+.dictionary-page input[type="text"] {
+    width: 100%;
+    padding: var(--spacing-md);
+    font-size: var(--font-size-md);
+    border: 2px solid var(--primary-light);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-lg);
+    transition: all var(--transition-normal);
+    background-color: var(--background-white);
+    color: var(--text-dark);
+    font-family: inherit;
+}
+
+.dictionary-page input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+/* Lista dei termini */
+.terms-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+/* Messaggi di stato */
+.dictionary-page p {
+    font-size: var(--font-size-md);
+    color: var(--text-dark);
+    margin-top: var(--spacing-md);
+    text-align: center;
+}
+
+.dictionary-page p.error {
+    color: var(--error-red);
+    font-weight: 700;
+}
+
+/* Card dei termini */
+.term-card {
+    background: var(--background-white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-light);
+    border-left: 6px solid var(--primary-blue);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+}
+
+.term-card:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: var(--shadow-medium);
+    border-left-color: var(--accent-orange);
+}
+
+/* Titolo del termine */
+.term-card h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-xs);
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+/* Descrizione del termine */
+.term-card p {
+    font-size: var(--font-size-normal);
+    color: var(--text-medium);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .terms-list {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .dictionary-page {
+        padding: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .dictionary-page {
+        padding: var(--spacing-md);
+    }
+}

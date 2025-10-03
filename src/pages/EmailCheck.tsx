@@ -1,33 +1,138 @@
-import React from 'react';
-import { EmailAnalyzer } from '../components/EmailChecker/EmailAnalyzer';
-import { ResultDisplay } from '../components/EmailChecker/ResultDisplay';
-import { useEmailCheckVm } from '../viewmodels/useEmailCheckVm';
+import React, { useState } from "react";
+import "./EmailCheck.css"
 
-export const EmailCheckPage: React.FC = () => {
-    const vm = useEmailCheckVm();
+interface EmailResult {
+    valid: boolean;
+    error?: string;
+}
+
+const EmailCheck: React.FC = () => {
+    const [emailText, setEmailText] = useState("");
+    const [result, setResult] = useState<EmailResult | null>(null);
+    const [loading, setLoading] = useState(false);
+
+
+    const analyzeEmail = (text: string) => {
+        setLoading(true);
+        setResult(null);
+
+        setTimeout(() => {
+            const lowered = text.toLowerCase();
+            const suspiciousTerms = [
+                // Richieste urgenti
+                "urgente",
+                "immediato",
+                "subito",
+                "entro 24 ore",
+                "entro 48 ore",
+                "azione immediata",
+
+                // Dati sensibili
+                "password",
+                "pin",
+                "codice fiscale",
+                "numero di carta",
+                "iban",
+                "cvc",
+                "otp",
+                "codice di sicurezza",
+
+                // Azioni sospette
+                "clicca qui",
+                "click here",
+                "accedi subito",
+                "reset password",
+                "verifica account",
+                "aggiorna le tue informazioni",
+
+                // Promesse esagerate
+                "hai vinto",
+                "complimenti",
+                "premio",
+                "lotteria",
+                "bonus",
+                "offerta esclusiva",
+                "regalo",
+
+                // Minacce
+                "il tuo account sarà bloccato",
+                "sospensione immediata",
+                "verifica obbligatoria",
+                "perdita definitiva",
+                "accesso non autorizzato",
+
+                // Link sospetti
+                "http://",
+                "https://",
+                ".ru",
+                ".cn",
+                ".tk",
+                ".ml",
+                ".xyz",
+
+                // Banche e istituzioni (comuni nei fake)
+                "paypal",
+                "poste italiane",
+                "unicredit",
+                "intesa sanpaolo",
+                "inps",
+                "agenzia delle entrate",
+            ];
+
+
+            const found = suspiciousTerms.filter((term) => lowered.includes(term));
+
+            if (found.length > 0) {
+                setResult({
+                    valid: false,
+                    error: `⚠️ Questa email contiene elementi sospetti: ${found.join(", ")}`,
+                });
+            } else {
+                setResult({
+                    valid: true,
+                });
+            }
+
+            setLoading(false);
+        }, 1000);
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        analyzeEmail(emailText);
+    };
 
     return (
-        <main className="page email-page" aria-labelledby="page-title">
-            <h1 id="page-title">Controllo Email - MayDay</h1>
-            <p style={{ fontSize: '18px' }}>
-                Incolla qui il testo di una email sospetta. Lʼanalisi usa regole semplici per aiutarti a decidere.
-            </p>
+        <div className="emailcheck-page">
+            <h1 className="text-2xl font-bold mb-4">Controllo Email</h1>
+            <form onSubmit={handleSubmit} className="emailcheck-form">
+                <textarea
+                    value={emailText}
+                    onChange={(e) => setEmailText(e.target.value)}
+                    placeholder="Incolla qui il testo della mail..."
+                    className="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    rows={6}
+                    required
+                />
+                <button
+                    type="submit"
+                    disabled={loading}
+                    className="bg-blue-600 text-white px-6 py-3 rounded-xl text-lg hover:bg-blue-700 disabled:opacity-50"
+                >
+                    {loading ? "Analisi in corso..." : "Analizza"}
+                </button>
+            </form>
 
-            <div className="grid">
-                <div>
-                    <EmailAnalyzer />
+            {result && (
+                <div
+                    className={`email-result ${result.valid ? "safe" : "danger"}`}
+                >
+                    {result.valid ? "✅ Questa email sembra sicura." : result.error}
                 </div>
 
-                <div>
-                    <ResultDisplay analysis={vm.analysis} />
-                </div>
-            </div>
-
-            {vm.error && <div role="alert" style={{ color: 'red', fontSize: '18px' }}>{vm.error}</div>}
-        </main>
+            )}
+        </div>
     );
 };
-const EmailCheck = () => {
-    return <div>Email Check</div>
-}
-export default EmailCheck
+
+export default EmailCheck;

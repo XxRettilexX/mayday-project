@@ -8,7 +8,7 @@ import {
     faGraduationCap,
     faHandsHelping
 } from "@fortawesome/free-solid-svg-icons";
-
+import "./Home.css"
 const Home = () => {
     const navigate = useNavigate();
 

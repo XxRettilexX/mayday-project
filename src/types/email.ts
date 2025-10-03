@@ -12,3 +12,9 @@ export interface RawEmailInput {
     testo: string;
     oggetto?: string;
 }
+
+export interface EmailCheckResult {
+    status: Sicurezza;
+    details: string[];
+    message: string;
+}

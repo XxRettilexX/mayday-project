@@ -1,0 +1,45 @@
+/* ThemeToggle.css - Pulsante per cambiare tema */
+
+/* Container */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Pulsante */
+.theme-toggle-btn {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xs) var(--spacing-md);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--icon-size-md);
+    transition: all var(--transition-normal);
+}
+
+.theme-toggle-btn:hover {
+    background: var(--accent-orange);
+    transform: scale(1.1);
+}
+
+/* Icona interna */
+.theme-icon {
+    transition: transform var(--transition-normal), color var(--transition-normal);
+}
+
+.theme-toggle-btn:hover .theme-icon {
+    transform: rotate(20deg) scale(1.1);
+}
+
+/* Focus visibile per accessibilità */
+.theme-toggle-btn:focus-visible {
+    outline: 3px solid var(--primary-blue);
+    outline-offset: 2px;
+    border-radius: var(--border-radius-lg);
+}

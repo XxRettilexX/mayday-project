@@ -6,9 +6,18 @@ import Home from "./pages/Home"
 import Dictionary from "./pages/Dictionary"
 import EmailCheck from "./pages/EmailCheck"
 import Administrative from "./pages/Administrative"
+import { useEffect } from 'react';
+import { initializeTheme } from './utils/theme';
+import ThemeToggle from './components/ThemeToggle/ThemeToggle';
 import "./App.css"
 
+
+
+
 export default function App() {
+  useEffect(() => {
+    initializeTheme();
+  }, []);
   return (
     <div className="app">
       <Header />
@@ -21,7 +30,8 @@ export default function App() {
           <Route path="/pratiche" element={<Administrative />} />
         </Routes>
       </main>
+      <ThemeToggle />
       <Footer />
     </div>
   )
-}
+};
