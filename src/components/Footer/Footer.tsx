@@ -24,7 +24,7 @@ const Footer = () => {
                 {/* Sezione contatti */}
                 <div className="footer-section">
                     <h4>Contatti</h4>
-                    <p><FontAwesomeIcon icon={faEnvelope} /> info@tuosito.com</p>
+                    <p><FontAwesomeIcon icon={faEnvelope} /> info@maydayproject.com</p>
                     <p><FontAwesomeIcon icon={faPhone} /> +39 123 456 789</p>
                 </div>
 
@@ -53,7 +53,7 @@ const Footer = () => {
 
             {/* Bottom bar */}
             <div className="footer-bottom">
-                <p>&copy; 2025 Vito Strisciuglio. Tutti i diritti riservati.</p>
+                <p>&copy; 2025 MayDay Project®. Tutti i diritti riservati.</p>
                 <button className="scroll-top" onClick={scrollToTop} aria-label="Torna su">
                     <FontAwesomeIcon icon={faArrowUp} />
                 </button>

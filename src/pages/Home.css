@@ -1,9 +1,6 @@
-/* home.css - Stili specifici per Home.tsx */
-
-/* ===== HERO SECTION ===== */
 .hero-section {
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
-    color: #fff;
+
     padding: var(--spacing-xxl) var(--spacing-lg);
     text-align: center;
     border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
@@ -65,7 +62,7 @@
 /* ===== QUICK ACTIONS ===== */
 .quick-actions-section {
     padding: var(--spacing-xl) 0;
-    background: var(--background-white);
+
 }
 
 .section-title {
@@ -147,12 +144,12 @@
 .action-content h3 {
     font-size: var(--font-size-md);
     margin-bottom: var(--spacing-xs);
-    color: var(--text-dark);
+
 }
 
 .action-content p {
     font-size: var(--font-size-normal);
-    color: var(--text-medium);
+
     margin: 0;
 }
 

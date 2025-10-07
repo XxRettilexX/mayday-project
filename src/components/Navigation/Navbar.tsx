@@ -26,15 +26,23 @@ const Navbar = () => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
 
-            setIsCompressed(currentScrollY > lastScrollY.current);
-            setHasScrolled(currentScrollY > scrollThreshold);
 
+            if (currentScrollY > lastScrollY.current && currentScrollY > scrollThreshold) {
+                setIsCompressed(true);
+            }
+
+            else if (currentScrollY < lastScrollY.current || currentScrollY <= scrollThreshold) {
+                setIsCompressed(false);
+            }
+
+            setHasScrolled(currentScrollY > scrollThreshold);
             lastScrollY.current = currentScrollY;
         };
 
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 

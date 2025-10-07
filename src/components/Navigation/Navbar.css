@@ -2,14 +2,9 @@
 
 /* Navbar principale */
 .main-nav {
-
-    box-shadow: var(--shadow-medium);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    transition: all var(--transition-slow);
-    border-bottom: 3px solid var(--primary-light);
+    transition: height 0.4s ease, padding 0.4s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 /* Stati navbar */
 .main-nav.expanded {
@@ -99,39 +94,30 @@
 }
 
 /* Pulsante hamburger */
-.hamburger-button {
-
-
-    border: none;
+.dropdown-menu {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    transform: translateY(-10px) scale(0.95);
+    background: var(--bg-card);
     border-radius: var(--border-radius-lg);
-    padding: var(--spacing-sm) var(--spacing-md);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-sm);
-    min-width: 120px;
-    height: 50px;
-    box-shadow: var(--shadow-medium);
-    position: relative;
-    z-index: 1002;
-    transition: all var(--transition-normal);
-}
-
-.hamburger-button:hover {
-    transform: scale(1.05);
     box-shadow: var(--shadow-heavy);
-    background: linear-gradient(135deg, var(--accent-orange), var(--accent-light));
+    padding: 0;
+    min-width: 250px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    z-index: 1099;
+    border: 2px solid var(--primary-light);
+    overflow: hidden;
 }
 
-.hamburger-icon {
-    font-size: 1.25rem;
-    transition: transform var(--transition-normal);
+.dropdown-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
 }
 
-.hamburger-button:hover .hamburger-icon {
-    transform: rotate(90deg);
-}
 
 .hamburger-text {
     font-weight: 600;
@@ -140,29 +126,29 @@
 
 /* Dropdown menu */
 .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-20px) scale(0.95);
-    background: var(--background-white);
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    transform: translateY(-10px) scale(0.95);
+    background: var(--bg-card);
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-heavy);
     padding: 0;
-    min-width: 280px;
+    min-width: 250px;
     opacity: 0;
     visibility: hidden;
     transition: all var(--transition-normal);
-    z-index: 1001;
+    z-index: 1099;
     border: 2px solid var(--primary-light);
-    margin-top: var(--spacing-sm);
     overflow: hidden;
 }
 
 .dropdown-menu.open {
     opacity: 1;
     visibility: visible;
-    transform: translateX(-50%) translateY(0) scale(1);
+    transform: translateY(0) scale(1);
 }
+
 
 .dropdown-menu::before {
     content: '';
@@ -200,14 +186,14 @@
 
 .dropdown-link:hover {
     background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
-    color: white;
+
     transform: translateX(8px);
     border-left: 4px solid var(--accent-orange);
 }
 
 .dropdown-link.active {
     background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
-    color: white;
+
     border-left: 4px solid var(--accent-orange);
 }
 
